@@ -1,0 +1,10 @@
+[
+  {
+    "name": "module1",
+    "parameters": [ "test", "test" ]
+  },
+  {
+    "name": "module2",
+    "parameters": [ "test", "test", "test" ]
+  }
+]

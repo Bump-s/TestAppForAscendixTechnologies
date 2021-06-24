@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestAppForAscendixTechnologies;
-using System.Collections.Generic;
 
 
 namespace JsonFunctionalityTest
@@ -8,41 +7,35 @@ namespace JsonFunctionalityTest
     [TestClass]
     public class UnitTest1
     {
-        int oneMillionOfPerson = 1000000;
         [TestMethod]
-        public async void CreateJson_AddOneMillionPerson()
+        public void ModulesInvalidJsonTest()
         {
-            PersonModel personModel = new PersonModel();
-            personModel.modules = new Queue<Person>();
-
-            for (int i = 0; i < oneMillionOfPerson; i++)
+            try
             {
-                personModel.modules.Enqueue(new Person("John", 25));
+                var modules = new Modules(@"invalid.json");
+
             }
-
-            await personModel.CreateJson(personModel);
-            PersonModel personModelResponse = await personModel.ReadJson();
-
-            int expected = oneMillionOfPerson;
-            int result = personModelResponse.modules.Count;
-
-            Assert.AreEqual(expected, result);
+            catch (System.Exception)
+            {
+                Assert.IsTrue(true);
+                return;
+            }
+            Assert.IsTrue(false);
         }
 
         [TestMethod]
-        public async void ReadJson_CheckForCorrectTypeOfObject()
+        public void ModulesValidJsonTest()
         {
-            PersonModel personModel = new PersonModel();
-            personModel.modules = new Queue<Person>();
-            personModel.modules.Enqueue(new Person("John", 25));
-
-            await personModel.CreateJson(personModel);
-            PersonModel personModelResponse = await personModel.ReadJson();
-            
-            Person checkPersonResult;
-            checkPersonResult = personModelResponse.modules.Dequeue();
-
-            Assert.AreEqual(typeof(Person), checkPersonResult.GetType());
+            try
+            {
+                var modules = new Modules();
+            }
+            catch (System.Exception ex)
+            {
+                Assert.IsTrue(false);
+                return;
+            }
+            Assert.IsTrue(true);
         }
     }
 }
