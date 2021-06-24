@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestAppForAscendixTechnologies;
 using System.Collections.Generic;
+using System.Text.Json;
 
 
 namespace JsonFunctionalityTest
@@ -8,11 +9,10 @@ namespace JsonFunctionalityTest
     [TestClass]
     public class UnitTest1
     {
+        int oneMillionOfPerson = 1000000;
         [TestMethod]
-        public void CreateJson_AddOneHundredThousandPerson()
+        public async void CreateJson_AddOneMillionPerson()
         {
-            int oneMillionOfPerson = 1000000;
-            Person person = new Person("John", 25);
             PersonModel personModel = new PersonModel();
             personModel.modules = new Queue<Person>();
 
@@ -20,14 +20,11 @@ namespace JsonFunctionalityTest
             {
                 personModel.modules.Enqueue(new Person("John", 25));
             }
+            personModel.CreateJson(personModel);
+            PersonModel personModelResponse = await personModel.ReadJson();
             int expected = oneMillionOfPerson;
-            int result = personModel.modules.Count;
+            int result = personModelResponse.modules.Count;
             Assert.AreEqual(expected, result);
-        }
-
-        public void As()
-        {
-
         }
     }
 }
