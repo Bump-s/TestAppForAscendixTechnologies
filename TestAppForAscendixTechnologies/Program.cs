@@ -1,9 +1,6 @@
 ﻿using System;
-using System.IO;
-using System.Text.Json;
 using System.Threading.Tasks;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace TestAppForAscendixTechnologies
 {
@@ -17,11 +14,11 @@ namespace TestAppForAscendixTechnologies
             personModel.modules.Enqueue(new Person("Bob", 17));
             personModel.modules.Enqueue(new Person("Sara", 36));
 
-            var jsonFunctionality = new JsonFunctionality();
+            //var jsonFunctionality = new JsonFunctionality();
 
-            await jsonFunctionality.CreateJson(personModel);
+            await personModel.CreateJson(personModel);
 
-            PersonModel personModelResponse = await jsonFunctionality.ReadJson();
+            PersonModel personModelResponse = await personModel.ReadJson();
 
             Console.ReadLine();
         }

@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAppForAscendixTechnologies", "TestAppForAscendixTechnologies\TestAppForAscendixTechnologies.csproj", "{A5C67564-FAF8-4F75-A881-6FD67384DCE2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonFunctionalityTest", "JsonFunctionalityTest\JsonFunctionalityTest.csproj", "{EB454AAA-13E4-4496-A328-E3B8EF0331C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A5C67564-FAF8-4F75-A881-6FD67384DCE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5C67564-FAF8-4F75-A881-6FD67384DCE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5C67564-FAF8-4F75-A881-6FD67384DCE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB454AAA-13E4-4496-A328-E3B8EF0331C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB454AAA-13E4-4496-A328-E3B8EF0331C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB454AAA-13E4-4496-A328-E3B8EF0331C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB454AAA-13E4-4496-A328-E3B8EF0331C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
